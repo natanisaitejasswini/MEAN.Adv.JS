@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My coding API webpage</title>
+  <meta  name="Description" content="Coding Bootcamp...">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+  <body>
+  <style type ="text/css">
+    button{
+      background-color: blue;
+      color: white;
+    }
+  </style>
+  <button>Button</button>
+  <div class ="name"></div>
+    <script>
+      $(document).ready(function(){
+        $(document).on('click',function(){
+          $.get("https://api.github.com/users/natanisaitejasswini", displayName)
+          function displayName(data) {
+            $('.name').html("<h3>"+data.name+"</h3>")
+            console.log(data);
+          }
+        });
+      })
+    </script>
+  </body>
+</html>
